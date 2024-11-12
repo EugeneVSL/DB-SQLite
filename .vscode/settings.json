@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:DB-SQLite}/data/customer.db",
+            "name": "SQLite-CustomerDB"
+        }
+    ]
+}

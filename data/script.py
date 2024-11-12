@@ -8,8 +8,7 @@ def createDB(db_path: str):
     # create database
     con = sqlite3.connect(db_path)
 
-    return con
-  
+    return con 
 
 def createDBEntities(con, ddl_file: str):
 
@@ -32,12 +31,11 @@ def createDBEntities(con, ddl_file: str):
         except OperationalError as err: 
             print(f"Operation failed: {err}")
 
-
 # define the database path
 db_file_path = 'data/customer.db'
 
 # define the DDL file path
-db_file_path = 'data/sql_scripts/create.sql'
+ddl_script_path = 'data/sql_scripts/create.sql'
 
 if os.path.exists(db_file_path):
 
@@ -51,7 +49,7 @@ if os.path.exists(db_file_path):
 con = createDB(db_file_path)
 
 # run DDL instructions
-createDBEntities(con, db_file_path)
+createDBEntities(con, ddl_script_path)
 
 # close the connection
 con.close()
