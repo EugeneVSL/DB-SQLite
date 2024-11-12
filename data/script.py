@@ -1,4 +1,4 @@
-# import sqlite module , os
+# import sqlite module, os
 import sqlite3
 from sqlite3 import OperationalError
 import os
