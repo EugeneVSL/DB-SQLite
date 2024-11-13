@@ -4,13 +4,13 @@ from sqlite3 import OperationalError
 import os
 
 def createDB(db_path: str):
-    """_summary_
+    """Creates a new SQLite database. If the database exists, returns the connection.
 
     Args:
-        db_path (str): _description_
+        db_path (str): the patj where the database is located
 
     Returns:
-        _type_: _description_
+        _type_: Returns the db connection
     """
     # create database
     con = sqlite3.connect(db_path)
@@ -18,11 +18,11 @@ def createDB(db_path: str):
     return con 
 
 def createDBEntities(con, ddl_file: str):
-    """_summary_
+    """ Runs the SQL commands.
 
     Args:
-        con (_type_): _description_
-        ddl_file (str): _description_
+        con (_type_): A db connection obeject 
+        ddl_file (str): The file path to the SQL instructions. The SQL instructions have to me separated by ';'.
     """
     # get the cursor
     cursor = con.cursor()
